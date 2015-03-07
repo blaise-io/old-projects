@@ -1,0 +1,270 @@
+Mon, 16 Jan 2012 10:51:36 +0100	Handshake: OK
+783bd8a738bf4486b3b93c32f15e8aa3
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Mon, 16 Jan 2012 10:51:35 +0100	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>zr0</name>
+    <key>7cb6b1ae9ee4d0b63e835e2cb4b41dab</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Tue, 01 Nov 2011 11:42:19 +0100	Handshake: OK
+78e4fb6314824307ac1d501f9b24d68a
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Tue, 01 Nov 2011 11:42:19 +0100	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>cojuz</name>
+    <key>bede64d9530f873fd154288070888b4c</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Fri, 21 Oct 2011 13:08:40 +0200	Handshake: OK
+e7a2311c51ef4fc9b8e1e10a1453d164
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Fri, 21 Oct 2011 13:08:40 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>zr0</name>
+    <key>7cb6b1ae9ee4d0b63e835e2cb4b41dab</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Sun, 02 Oct 2011 01:52:23 +0200	Handshake: OK
+efdaca15f31e45bdbeb93f652607c441
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Sun, 02 Oct 2011 01:52:23 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>jeffreypcarroll</name>
+    <key>eeb356e9c78a21c6b37ebed49b555565</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Wed, 21 Sep 2011 13:51:05 +0200	Handshake: OK
+1a02c4ace30b47bc88ef7a0ab571154f
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Wed, 21 Sep 2011 13:51:05 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>zr0</name>
+    <key>7cb6b1ae9ee4d0b63e835e2cb4b41dab</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Tue, 16 Aug 2011 11:13:32 +0200	Handshake: OK
+c7e5fc4102854290ba4c905ffc6213b8
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Tue, 16 Aug 2011 11:13:32 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>peu-depeu</name>
+    <key>138d80a0d4fce9933bd673c31953b155</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Tue, 16 Aug 2011 11:12:02 +0200	Handshake: OK
+231a656199f247e9938c261de3b83819
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Tue, 16 Aug 2011 11:12:02 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>peu-depeu</name>
+    <key>138d80a0d4fce9933bd673c31953b155</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Thu, 26 May 2011 07:51:47 +0200	Handshake: OK
+a964fdb7995e49a1bda243987da755e6
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Thu, 26 May 2011 07:51:47 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Thu, 26 May 2011 07:43:52 +0200	Handshake: OK
+59801caec112421096a176afb2e155cc
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Thu, 26 May 2011 07:43:52 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Fri, 08 Apr 2011 00:35:46 +0200	Handshake: OK
+15b6726d24ea4f72bdd6f303a1bcb490
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Fri, 08 Apr 2011 00:35:46 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Sun, 03 Apr 2011 03:23:27 +0200	Handshake: OK
+d785bbb08a27490699487d987c8ead4c
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Sun, 03 Apr 2011 03:23:26 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Sun, 03 Apr 2011 03:08:56 +0200	Handshake: OK
+1cbcfa9d14b64d20b38a5209af64a4ef
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Sun, 03 Apr 2011 03:08:56 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Sun, 03 Apr 2011 03:06:24 +0200	Handshake: OK
+ef6101d5f11e4199878dc16c7da00364
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Sun, 03 Apr 2011 03:06:24 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Sun, 03 Apr 2011 02:52:20 +0200	Handshake: OK
+d54b4f88e83e4f738c2bc14f619d990a
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Sun, 03 Apr 2011 02:52:19 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Sun, 03 Apr 2011 02:24:30 +0200	Handshake: OK
+447b2e0f3e954f1796c439a04f2b8847
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Sun, 03 Apr 2011 02:24:30 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Sun, 03 Apr 2011 02:22:01 +0200	Handshake: OK
+15b3638a56044f7dbc772aacde346ef0
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Sun, 03 Apr 2011 02:22:00 +0200	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>fermerlo</name>
+    <key>58b6928444be791dfab8f4d7983ab001</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Tue, 15 Mar 2011 13:10:29 +0100	Handshake: OK
+cb0cfec1e8464e09a81ea05e529d0a7e
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Tue, 15 Mar 2011 13:10:29 +0100	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>zr0</name>
+    <key>7cb6b1ae9ee4d0b63e835e2cb4b41dab</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================
+Fri, 04 Mar 2011 11:57:52 +0100	Handshake: OK
+0192f029fa0e44e79131579d0207f5ec
+http://post.audioscrobbler.com:80/np_1.2
+http://post2.audioscrobbler.com:80/protocol_1.2
+
+=========================
+Fri, 04 Mar 2011 11:57:52 +0100	Get auth session: <?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<session>
+    <name>lelyzee</name>
+    <key>e111bdb33e1017562ab0c98c3f39d89b</key>
+    <subscriber>0</subscriber>
+</session></lfm>
+
+=========================

@@ -1,0 +1,6 @@
+php_flag display_errors On
+php_value error_reporting E_ALL
+php_value output_handler ob_gzhandler
+
+AddDefaultCharset utf-8
+AddType application/x-httpd-php .html .htm .js
