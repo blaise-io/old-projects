@@ -1,6 +1,6 @@
 # [Tetris](https://blaise.io/tetris)
 
-Project from 2009.
+Project from 2008.
 
 I was trying to find a new job in the web dev business, but nothing showed my 
 JavaScript capabilities, other than a bit of form validation and mouse handling.
