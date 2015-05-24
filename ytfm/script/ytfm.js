@@ -676,9 +676,9 @@ playlist : {
 		$('#playlist-form-user input:eq(0)').val(Y.scrobble.user.name);
 
 		// Country playlist: Client country
-		$.get('//api.hostip.info/', function(xml)
+		$.get('//www.telize.com/geoip', function(json)
 		{
-			var country = $(xml).find('countryName:eq(0)').text().toLowerCase();
+			var country = json.country.toLowerCase();
 			$('#playlist-form-country option[value=' + country + ']').attr('selected', true);
 		});
 
