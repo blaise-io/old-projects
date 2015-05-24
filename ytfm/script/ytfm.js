@@ -1,18 +1,13 @@
 /**
 * ytfm namespace
 */
-var ytfm = {};
-ytfm = function()
-{
-	if (ytfm.instance) return ytfm.instance;
-	return (ytfm.instance = this);
-};
+var ytfm = function() {};
 
 // Y: ytfm shortcut
 var Y = new ytfm();
 
 // Console.log for the other browsers
-if (typeof console == 'undefined')
+if (typeof console === 'undefined')
 {
 	var console = {};
 	console.log = function(){void(0)};
@@ -30,71 +25,14 @@ $(document).ready(function()
 	Y.dom.bootstrap();
 });
 
+function setGoogleClientID() {
+	gapi.client.setApiKey('AIzaSyC3xzdiDOqWMRCNRtUBctcCTuFRsMFTiy8');
+}
+
 /**
 * YTFM functions
 */
 $.extend(ytfm.prototype, {
-/**
-* =============================================================================
-* AJAX - Data retrieval related
-* http://jimbojw.com/wiki/index.php?title=SWFHttpRequest_Flash/Ajax_Utility
-* =============================================================================
-*/
-ajax : {
-
-	/**
-	* SWFHttpRequest GET wrapper
-	*/
-	GET : function(url, callback)
-	{
-		Y.ajax.XDomainRequest(url, 'GET', null, callback);
-	},
-
-	/**
-	* SWFHttpRequest POST wrapper
-	*/
-	POST : function(url, body, callback)
-	{
-		Y.ajax.XDomainRequest(url, 'POST', body, callback);
-	},
-
-	/**
-	* SWFHttpRequest function
-	*/
-	XDomainRequest : function(url, method, body, callback)
-	{
-		callback	= callback || function(json){return;};
-		method		= method || 'GET';
-		body		= body || '';
-
-		// Queue if not initialized yet
-		if (!window.SWFHttpRequest)
-		{
-			console.log('AJAX queue');
-			setTimeout(function()
-			{
-				Y.ajax.XDomainRequest(url, method, body, callback);
-			}, 500);
-			return;
-		}
-
-		console.log(method, url, body);
-
-		var objSWFHttpRequest = new SWFHttpRequest();
-		objSWFHttpRequest.open(method, url);
-		objSWFHttpRequest.onreadystatechange = function()
-		{
-			if (this.readyState != 4) return;
-			if (this.status == 200)
-			{
-				var response = this.responseXML;
-				callback(response);
-			}
-		};
-		objSWFHttpRequest.send(body ? body : null);
-	}
-},
-
 
 /**
 * =============================================================================
@@ -109,9 +47,7 @@ dom : {
 	bootstrap : function()
 	{
 		// Load cross-domain ajax SWF
-		var $body = $(document.body).empty().attr('class', 'initializing');
-		var $xdomainDiv = $('<div>').attr('id', 'xdomain').appendTo($body);
-		swfobject.embedSWF('./script/swfhttprequest.swf', 'xdomain', '0', '0', '9.0.0', null, null, {allowScriptAccess: 'always'}, {id: 'swfhttprequest'});
+		$(document.body).empty().attr('class', 'initializing');
 
 		// Load HTML
 		$.get('blank.html', function(html)
@@ -243,7 +179,7 @@ dom : {
 
 		// Facebook URL
 		var title = Y.playlist.name + ' (Playlist on YTFM)';
-		var URL = 'http://blaise.io/ytfm/' + songURL;
+		var URL = 'https://blaise.io/ytfm/' + songURL;
 		$('#facebook').attr('href', 'http://www.facebook.com/sharer.php?t=' + encodeURIComponent(title) + '&u=' + encodeURIComponent(URL)).text('Share current playlist on Facebook');
 	},
 
@@ -268,7 +204,7 @@ dom : {
 */
 lastfm : {
 
-	host : 'https://ws.audioscrobbler.com/2.0/',
+	host : '//ws.audioscrobbler.com/2.0/',
 	api_key : 'ff9cf4936255f3a68d1a066bcb6fcbe4',
 
 	/**
@@ -342,7 +278,7 @@ lastfm : {
 		// Cache
 		if (typeof Y.playlist.cache[playlist_url] == 'undefined')
 		{
-			Y.ajax.GET(playlist_url, function(xml)
+			$.get(playlist_url, function(xml)
 			{
 				Y.playlist.cache[playlist_url] = xml;
 				Y.lastfm.parseTracksXML(xml, param['method']);
@@ -427,7 +363,7 @@ lastfm : {
 			param['user']		= user;
 			param['method']		= 'user.getfriends';
 			param['limit']		= 22;
-			Y.ajax.GET(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
+			$.get(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
 			{
 				var friends = 'Friends of ' + user + ': ';
 				$(xml).find('name').each(function(index)
@@ -440,7 +376,7 @@ lastfm : {
 				// Get neighbours
 				param['method'] = 'user.getneighbours';
 				param['limit']	= 5;
-				Y.ajax.GET(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
+				$.get(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
 				{
 					var neighbours = ' Musical neighbours: ';
 					$(xml).find('name').each(function(index)
@@ -467,7 +403,7 @@ lastfm : {
 			param['artist']		= artist;
 			param['method']		= 'artist.getsimilar';
 			param['limit']		= (Y.scrobble.user.name) ? 10 : 22;
-			Y.ajax.GET(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
+			$.get(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
 			{
 				var similar = 'Similar to ' + artist + ': ';
 				$(xml).find('name').each(function(index)
@@ -484,7 +420,7 @@ lastfm : {
 					Y.dom.setupRecClicks();
 				} else
 				{
-					Y.ajax.GET('http://ws.audioscrobbler.com/1.0/user/' + Y.scrobble.user.name + '/systemrecs.rss', function(xml)
+					$.get('http://ws.audioscrobbler.com/1.0/user/' + Y.scrobble.user.name + '/systemrecs.rss', function(xml)
 					{
 						var recommends = ' Recommended to you: ';
 						var i = 0;
@@ -511,7 +447,7 @@ lastfm : {
 			param['api_key']	= Y.lastfm.api_key;
 			param['tag']		= tag;
 			param['method']		= 'tag.getsimilar';
-			Y.ajax.GET(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
+			$.get(Y.lastfm.host + '?' + Y.tools.http_build_query(param), function(xml)
 			{
 				var tags = 'Tags similar to ' + tag + ': ';
 				var i = 0;
@@ -559,35 +495,31 @@ player : {
 	*/
 	init : function(videoid, index)
 	{
-		var opts = {
-			autoplay		: 1,
-			cc_load_policy	: 3, // captions
-			color1			: '0xffffff',
-			color2			: '0xdddddd',
-			egm				: 0,
-			enablejsapi		: 1,
-			fs				: 1, // enable fullscreen
-			hd				: 1, // looks pretty, but is buffering too much
-			iv_load_policy	: 3, // annotations
-			playerapiid		: 'YouTubeObject',
-			rel				: 0, // related vids
-			showsearch		: 0,
-			showinfo		: 0,
-		};
-
-		var params	= {allowScriptAccess: 'always', allowFullScreen: 'true'};
-		var atts	= {id: 'YouTubeObject'};
-		var req		= videoid + '&' + Y.tools.http_build_query(opts);
-
-		$('<div>').attr('id', 'yt').appendTo('#video-wrapper');
-		swfobject.embedSWF('https://www.youtube.com/v/' + req, 'yt', '100%', '100%', '8', null, null, params, atts);
-
-		Y.player.obj = document.getElementById('YouTubeObject');
-		Y.player.initialized = true;
-		window.setTimeout(function()
+		Y.player.obj = new YT.Player('video-wrapper',
 		{
-			Y.player.startDaemon();
-		}, 100);
+			videoId		: videoid,
+			height		: 344,
+			width		: 525,
+			playerVars	:
+			{
+				autohide	: 0,
+				theme		: 'dark',
+				controls	: 2,
+				autoplay	: 1,
+				fs			: 1, // enable fullscreen
+				rel			: 0, // no related vids
+				showinfo	: 0
+			},
+			events:
+			{
+				onReady: function()
+				{
+					Y.player.initialized = true;
+					Y.player.startDaemon();
+					Y.player.play(videoid, index);
+				}
+			}
+		});
 
 		$('body').attr('class', 'done');
 	},
@@ -598,7 +530,7 @@ player : {
 	*/
 	play : function(videoid, index)
 	{
-		console.log('PLAY ' + videoid);
+		console.log('PLAY ', videoid);
 
 		if (index != Y.playlist.np) Y.playlist.pn = false;
 		if (Y.scrobble.user.s) Y.scrobble.flushQueue();
@@ -667,11 +599,12 @@ player : {
 	startDaemon : function()
 	{
 		console.log('Daemon started');
+		if (Y.player.daemonStarted) {
+			return;
+		}
+		Y.player.daemonStarted = true;
 		window.setInterval(function()
 		{
-
-			if (typeof Y.player.obj.getPlayerState == 'undefined') return;
-
 			var Ytr = Y.playlist.track;
 			Ytr.state		= Y.player.obj.getPlayerState();
 			Ytr.position	= Y.player.obj.getCurrentTime();
@@ -743,7 +676,7 @@ playlist : {
 		$('#playlist-form-user input:eq(0)').val(Y.scrobble.user.name);
 
 		// Country playlist: Client country
-		Y.ajax.GET('https://api.hostip.info/', function(xml)
+		$.get('//api.hostip.info/', function(xml)
 		{
 			var country = $(xml).find('countryName:eq(0)').text().toLowerCase();
 			$('#playlist-form-country option[value=' + country + ']').attr('selected', true);
@@ -855,8 +788,8 @@ playlist : {
 
 		// Reset values
 		Y.playlist.current	= playlist;
-		Y.playlist.pn		= false,
-		Y.playlist.pnl		= false
+		Y.playlist.pn		= false;
+		Y.playlist.pnl		= false;
 		Y.playlist.track	= [];
 
 		// Show playlist pane
@@ -1005,11 +938,11 @@ scrobble : {
 			m : ''
 		};
 		param = Y.tools.http_build_query(param);
-		Y.ajax.POST(Y.scrobble.user.np, param, function(lfm)
+		$.post(Y.scrobble.user.np, param, function(lfm)
 		{
 			if ($.trim(lfm) == 'BADSESSION')
 			{
-				Y.ajax.GET('catch.php?refreshsession=true', function(s)
+				$.get('catch.php?refreshsession=true', function(s)
 				{
 					console.log(s);
 					sp = s.split("\n");
@@ -1073,7 +1006,7 @@ scrobble : {
 			}
 			param['s'] = Y.scrobble.user.s;
 			param = Y.tools.http_build_query(param);
-			Y.ajax.POST(Y.scrobble.user.sm, param, function(lfm)
+			$.post(Y.scrobble.user.sm, param, function(lfm)
 			{
 				console.log('SCROBBLE: ' + lfm);
 				if ($.trim(lfm) == 'OK') Y.scrobble.queue = [];
@@ -1142,34 +1075,33 @@ youtube : {
 	/**
 	* YT API host
 	*/
-	host : 'https://gdata.youtube.com/feeds/api/videos',
+	host : 'https://content.googleapis.com/youtube/v3/search',
 
 	/**
 	* YT API default settings
-	* http://code.google.com/apis/youtube/2.0/developers_guide_protocol_api_query_parameters.html
+	* https://developers.google.com/youtube/v3/docs/search/list
 	*/
 	param : {
-		'alt'			: 'atom', // json is preferred, but the feeds sometimes contains syntax errors
-		'category'		: 'Music',
-		'format'		: '5', // embeddable vids
-		'key'			: 'AI39si6NkFK4mXXlJAaCyvAlT8EHN85U1bwleFQLNXqTaQVaBoodYXMBh2UU5RnmLZUyt_lG42DYOdg6664XbwceAR7OAkhZJg',
-		'max-results'	: '3',
-		// 'restriction'	: '<?php echo $_SERVER['REMOTE_ADDR']; ?>',
-		'safeSearch'	: 'none',
-		'v'				: '2'
+		'part'				: 'snippet',
+		'videoCategoryId'	: 'Music',
+		'videoEmbeddable'	: 'true', // embeddable vids
+		'key'				: 'AIzaSyC3xzdiDOqWMRCNRtUBctcCTuFRsMFTiy8',
+		'type'				: 'video',
+		'maxResults'		: 3,
+		'safeSearch'		: 'none'
 	},
 
 	/**
 	* Get YT video id by playlist index
 	*/
-	getVideoXML : function(index, callback)
+	getVideoJSON : function(index, callback)
 	{
 		var artist		= Y.playlist.current[index].artist;
 		var track		= Y.playlist.current[index].track.replace(/ ?\((.*)\)$/, ''); // removes (feat ...) / (live) / (album version), etc
 		var param		= Y.youtube.param;
 		param['q']		= '"' + artist + '", "' + track + '"';
 		var video_url	= Y.youtube.host + '?' + Y.tools.http_build_query(param);
-		Y.ajax.GET(video_url, callback);
+		$.get(video_url, callback);
 	},
 
 	/**
@@ -1201,15 +1133,18 @@ youtube : {
 			return;
 		}
 
-		Y.youtube.getVideoXML(index, function(xml)
+		Y.youtube.getVideoJSON(index, function(json)
 		{
-			var videoid = Y.youtube.parseVideoXML(xml, index);
+			var videoid = Y.youtube.processVideoJSON(json, index);
 			if (!videoid)
 			{
 				console.log('Cannot find a video for ' + (index+1) + ': ' + Y.playlist.current[index].artist + ' - ' + Y.playlist.current[index].track);
 				index++;
 				tries++;
-				setTimeout(function(){ Y.youtube.getFirstAvailable(index, callback, tries); }, 200);
+				setTimeout(function()
+				{
+					Y.youtube.getFirstAvailable(index, callback, tries);
+				}, 200);
 			} else
 			{
 				callback(videoid, index);
@@ -1221,7 +1156,7 @@ youtube : {
 	* Parse video XML
 	* This returns the best matching YT video ID
 	*/
-	parseVideoXML : function(xml, index)
+	processVideoJSON : function(json, index)
 	{
 		// Don't show emo kids playing guitar
 		var rating = {
@@ -1247,21 +1182,21 @@ youtube : {
 			'perform'		: -1
 		};
 
-		if ($(xml).find('entry').length == 0)
+		if (!json.items || json.items.length === 0)
 		{
 			Y.playlist.markAvailable(index, false);
 			return false;
 		} else
 		{
 			var win = {vid : '', pts : 0};
-			$(xml).find('entry').each(function(index)
+			for (var i = 0, m = json.items.length; i < m; i++)
 			{
 				var p = 50;
-				var desc = $(this).find('media\\:description, description').eq(0).text().toLowerCase()
-					+ $(this).find('media\\:title, title').eq(0).text().toLowerCase();
+				var desc = json.items[i].snippet.title +
+					json.items[i].snippet.description;
 				for (var key in rating)
 				{
-					if (desc.match(key))
+					if (desc.toLowerCase().match(key))
 					{
 						p += parseInt(rating[key]);
 					}
@@ -1269,9 +1204,10 @@ youtube : {
 				if (p > win.pts)
 				{
 					win.pts = p;
-					win.vid = $(this).find('yt\\:videoid, videoid').eq(0).text();
+					win.vid = json.items[i].id.videoId
 				}
-			});
+			}
+
 			Y.playlist.markAvailable(index, true, win.vid);
 			return win.vid;
 		}
