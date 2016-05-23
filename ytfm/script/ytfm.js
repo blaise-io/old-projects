@@ -1083,7 +1083,7 @@ youtube : {
 	*/
 	param : {
 		'part'				: 'snippet',
-		'videoCategoryId'	: 'Music',
+		// 'videoCategoryId'	: 'Music', // Does not work icw other filters
 		'videoEmbeddable'	: 'true', // embeddable vids
 		'key'				: 'AIzaSyC3xzdiDOqWMRCNRtUBctcCTuFRsMFTiy8',
 		'type'				: 'video',
