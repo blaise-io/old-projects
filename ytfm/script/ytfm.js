@@ -1085,7 +1085,7 @@ youtube : {
 		'part'				: 'snippet',
 		// 'videoCategoryId'	: 'Music', // Does not work icw other filters
 		'videoEmbeddable'	: 'true', // embeddable vids
-		'key'				: 'AIzaSyC3xzdiDOqWMRCNRtUBctcCTuFRsMFTiy8',
+		'key'				: 'AIzaSyBA2nUs1mIFzAjyzX_vaywpplCFiX8-LNU',
 		'type'				: 'video',
 		'maxResults'		: 3,
 		'safeSearch'		: 'none'
