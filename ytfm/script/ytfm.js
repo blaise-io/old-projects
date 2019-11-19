@@ -26,7 +26,7 @@ $(document).ready(function()
 });
 
 function setGoogleClientID() {
-	gapi.client.setApiKey('AIzaSyC3xzdiDOqWMRCNRtUBctcCTuFRsMFTiy8');
+	gapi.client.setApiKey('AIzaSyBA2nUs1mIFzAjyzX_vaywpplCFiX8-LNU');
 }
 
 /**
